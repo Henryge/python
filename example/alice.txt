@@ -1,0 +1,1128 @@
+Skip to content
+titletitle
+ 
+
+    Jenkins
+    UAT环境发布
+    iprs-uat
+    #28
+
+ 返回到工程
+ 状态集
+ 变更记录
+ Console Output
+ View as plain text
+ 编辑编译信息
+ Parameters
+ Git Build Data
+ No Tags
+ Monitor Maven Process
+ 前一次构建
+进度:	
+	
+	
+In progress控制台输出
+
+Started by user anonymous
+Building in workspace /home/maven/.jenkins/workspace/UAT2/iprs-uat
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url ssh://admin@shltfapp01.shie.com.cn:29418/iprs # timeout=10
+Fetching upstream changes from ssh://admin@shltfapp01.shie.com.cn:29418/iprs
+ > git --version # timeout=10
+ > git fetch --tags --progress ssh://admin@shltfapp01.shie.com.cn:29418/iprs +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/uat^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/uat^{commit} # timeout=10
+Checking out Revision 153fd0dd735836f51ddb388bcb00b2b034fdb703 (refs/remotes/origin/uat)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 153fd0dd735836f51ddb388bcb00b2b034fdb703
+ > git rev-list 199359ca4695798a443ec77fdce9d2950260e821 # timeout=10
+[iprs-uat] $ /bin/sh -xe /home/maven/apache-tomcat-8.0.28/temp/hudson7113739916939198663.sh
++ sed -i s/0.0.1-SNAPSHOT/1.1.0-RELEASE/g pom.xml
++ mvn -s /home/maven/apache-maven-3.3.3/conf/settings.xml -f pom.xml clean
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building iprs 1.1.0-RELEASE
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ iprs ---
+[INFO] Deleting /data/maven/.jenkins/workspace/UAT2/iprs-uat/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.304 s
+[INFO] Finished at: 2017-10-20T16:18:08+08:00
+[INFO] Final Memory: 7M/150M
+[INFO] ------------------------------------------------------------------------
+Parsing POMs
+Established TCP socket on 45213
+[iprs-uat] $ /home/maven/jdk1.8.0_65/bin/java -cp /home/maven/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven32-agent-1.7.jar:/home/maven/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar:/home/maven/apache-maven-3.3.9/conf/logging jenkins.maven3.agent.Maven32Main /home/maven/apache-maven-3.3.9 /data/maven/apache-tomcat-8.0.28/webapps/jenkins/WEB-INF/lib/remoting-2.60.jar /home/maven/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven32-interceptor-1.7.jar /home/maven/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.7.jar 45213
+<===[JENKINS REMOTING CAPACITY]===>channel started
+
+Executing Maven:  -B -f /home/maven/.jenkins/workspace/UAT2/iprs-uat/pom.xml -s /home/maven/.m2/repository/settings.xml install -Dmaven.test.skip=true
+
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building iprs 1.1.0-RELEASE
+[INFO] ------------------------------------------------------------------------
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ iprs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 28 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ iprs ---
+[INFO] Compiling 136 source files to /home/maven/.jenkins/workspace/UAT2/iprs-uat/target/classes
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ iprs ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ iprs ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ iprs ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ iprs ---
+
+[INFO] Packaging webapp
+[INFO] Assembling webapp [iprs] in [/home/maven/.jenkins/workspace/UAT2/iprs-uat/target/iprs]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/maven/.jenkins/workspace/UAT2/iprs-uat/src/main/webapp]
+[INFO] Webapp assembled in [204 msecs]
+[INFO] Building war: /home/maven/.jenkins/workspace/UAT2/iprs-uat/target/iprs.war
+
+[INFO] WEB-INF/web.xml already added, skipping
+
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ iprs ---
+[INFO] Installing /home/maven/.jenkins/workspace/UAT2/iprs-uat/target/iprs.war to /home/maven/.m2/repository/iprs/iprs/1.1.0-RELEASE/iprs-1.1.0-RELEASE.war
+[INFO] Installing /home/maven/.jenkins/workspace/UAT2/iprs-uat/pom.xml to /home/maven/.m2/repository/iprs/iprs/1.1.0-RELEASE/iprs-1.1.0-RELEASE.pom
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.220 s
+[INFO] Finished at: 2017-10-20T16:18:20+08:00
+[INFO] Final Memory: 35M/291M
+[INFO] ------------------------------------------------------------------------
+[JENKINS] Archiving /home/maven/.jenkins/workspace/UAT2/iprs-uat/pom.xml to iprs/iprs/1.1.0-RELEASE/iprs-1.1.0-RELEASE.pom
+[JENKINS] Archiving /home/maven/.jenkins/workspace/UAT2/iprs-uat/target/iprs.war to iprs/iprs/1.1.0-RELEASE/iprs-1.1.0-RELEASE.war
+[iprs-uat] $ /bin/sh -xe /home/maven/apache-tomcat-8.0.28/temp/hudson3255492640336598821.sh
+channel stopped
++ docker pull reg-mirror.shie.site/shie-base/centos6-tomcat:7
+7: Pulling from shie-base/centos6-tomcat
+Digest: sha256:482974acea5c6d9000484e74eec696c610ddc56df1941c6b32985079eabd5cdd
+Status: Image is up to date for reg-mirror.shie.site/shie-base/centos6-tomcat:7
++ export DOCKER_REG=reg.shie.com.cn/comm
++ DOCKER_REG=reg.shie.com.cn/comm
++ '[' -z ']'
++ export imagename=iprs
++ imagename=iprs
++ export DT=1.0.1
++ DT=1.0.1
++ cd /home/maven/.jenkins/workspace/UAT2/iprs-uat/
++ '[' -f 'target/*.jar' ']'
++ docker build -t reg.shie.com.cn/comm/iprs /home/maven/.jenkins/workspace/UAT2/iprs-uat/
+
+Sending build context to Docker daemon 47.35 MB
+Sending build context to Docker daemon 47.91 MB
+Sending build context to Docker daemon 48.46 MB
+Sending build context to Docker daemon 49.02 MB
+Sending build context to Docker daemon 49.58 MB
+Sending build context to Docker daemon 50.14 MB
+Sending build context to Docker daemon 50.69 MB
+Sending build context to Docker daemon 51.25 MB
+Sending build context to Docker daemon 51.81 MB
+Sending build context to Docker daemon 52.36 MB
+Sending build context to Docker daemon 52.92 MB
+Sending build context to Docker daemon 53.48 MB
+Sending build context to Docker daemon 54.03 MB
+Sending build context to Docker daemon 54.59 MB
+Sending build context to Docker daemon 55.15 MB
+Sending build context to Docker daemon 55.71 MB
+Sending build context to Docker daemon 56.26 MB
+Sending build context to Docker daemon 56.82 MB
+Sending build context to Docker daemon 57.38 MB
+Sending build context to Docker daemon 57.93 MB
+Sending build context to Docker daemon 58.49 MB
+Sending build context to Docker daemon 59.05 MB
+Sending build context to Docker daemon  59.6 MB
+Sending build context to Docker daemon 60.16 MB
+Sending build context to Docker daemon 60.72 MB
+Sending build context to Docker daemon 61.28 MB
+Sending build context to Docker daemon 61.83 MB
+Sending build context to Docker daemon 62.39 MB
+Sending build context to Docker daemon 62.95 MB
+Sending build context to Docker daemon  63.5 MB
+Sending build context to Docker daemon 64.06 MB
+Sending build context to Docker daemon 64.62 MB
+Sending build context to Docker daemon 65.18 MB
+Sending build context to Docker daemon 65.73 MB
+Sending build context to Docker daemon 66.29 MB
+Sending build context to Docker daemon 66.85 MB
+Sending build context to Docker daemon  67.4 MB
+Sending build context to Docker daemon 67.96 MB
+Sending build context to Docker daemon 68.52 MB
+Sending build context to Docker daemon 69.07 MB
+Sending build context to Docker daemon 69.63 MB
+Sending build context to Docker daemon 70.19 MB
+Sending build context to Docker daemon 70.75 MB
+Sending build context to Docker daemon  71.3 MB
+Sending build context to Docker daemon 71.86 MB
+Sending build context to Docker daemon 72.42 MB
+Sending build context to Docker daemon 72.97 MB
+Sending build context to Docker daemon 73.53 MB
+Sending build context to Docker daemon 74.09 MB
+Sending build context to Docker daemon 74.65 MB
+Sending build context to Docker daemon  75.2 MB
+Sending build context to Docker daemon 75.76 MB
+Sending build context to Docker daemon 76.32 MB
+Sending build context to Docker daemon 76.87 MB
+Sending build context to Docker daemon 77.43 MB
+Sending build context to Docker daemon 77.99 MB
+Sending build context to Docker daemon 78.54 MB
+Sending build context to Docker daemon  79.1 MB
+Sending build context to Docker daemon 79.66 MB
+Sending build context to Docker daemon 80.22 MB
+Sending build context to Docker daemon 80.77 MB
+Sending build context to Docker daemon 81.33 MB
+Sending build context to Docker daemon 81.89 MB
+Sending build context to Docker daemon 82.44 MB
+Sending build context to Docker daemon    83 MB
+Sending build context to Docker daemon 83.56 MB
+Sending build context to Docker daemon 84.12 MB
+Sending build context to Docker daemon 84.67 MB
+Sending build context to Docker daemon 85.23 MB
+Sending build context to Docker daemon 85.79 MB
+Sending build context to Docker daemon 86.34 MB
+Sending build context to Docker daemon  86.9 MB
+Sending build context to Docker daemon 87.46 MB
+Sending build context to Docker daemon 88.01 MB
+Sending build context to Docker daemon 88.57 MB
+Sending build context to Docker daemon 89.13 MB
+Sending build context to Docker daemon 89.69 MB
+Sending build context to Docker daemon 90.24 MB
+Sending build context to Docker daemon  90.8 MB
+Sending build context to Docker daemon 91.36 MB
+Sending build context to Docker daemon 91.91 MB
+Sending build context to Docker daemon 92.47 MB
+Sending build context to Docker daemon 93.03 MB
+Sending build context to Docker daemon 93.59 MB
+Sending build context to Docker daemon 94.14 MB
+Sending build context to Docker daemon  94.7 MB
+Sending build context to Docker daemon 95.26 MB
+Sending build context to Docker daemon 95.81 MB
+Sending build context to Docker daemon 96.37 MB
+Sending build context to Docker daemon 96.93 MB
+Sending build context to Docker daemon 97.48 MB
+Sending build context to Docker daemon 98.04 MB
+Sending build context to Docker daemon  98.6 MB
+Sending build context to Docker daemon 99.16 MB
+Sending build context to Docker daemon 99.71 MB
+Sending build context to Docker daemon 100.3 MB
+Sending build context to Docker daemon 100.8 MB
+Sending build context to Docker daemon 101.4 MB
+Sending build context to Docker daemon 101.9 MB
+Sending build context to Docker daemon 102.5 MB
+Sending build context to Docker daemon 103.1 MB
+Sending build context to Docker daemon 103.6 MB
+Sending build context to Docker daemon 104.2 MB
+Sending build context to Docker daemon 104.7 MB
+Sending build context to Docker daemon 105.3 MB
+Sending build context to Docker daemon 105.8 MB
+Sending build context to Docker daemon 106.4 MB
+Sending build context to Docker daemon   107 MB
+Sending build context to Docker daemon 107.5 MB
+Sending build context to Docker daemon 108.1 MB
+Sending build context to Docker daemon 108.6 MB
+Sending build context to Docker daemon 109.2 MB
+Sending build context to Docker daemon 109.7 MB
+Sending build context to Docker daemon 110.3 MB
+Sending build context to Docker daemon 110.9 MB
+Sending build context to Docker daemon 111.4 MB
+Sending build context to Docker daemon   112 MB
+Sending build context to Docker daemon 112.5 MB
+Sending build context to Docker daemon 113.1 MB
+Sending build context to Docker daemon 113.6 MB
+Sending build context to Docker daemon 114.2 MB
+Sending build context to Docker daemon 114.8 MB
+Sending build context to Docker daemon 115.3 MB
+Sending build context to Docker daemon 115.9 MB
+Sending build context to Docker daemon 116.4 MB
+Sending build context to Docker daemon   117 MB
+Sending build context to Docker daemon 117.5 MB
+Sending build context to Docker daemon 118.1 MB
+Sending build context to Docker daemon 118.7 MB
+Sending build context to Docker daemon 119.2 MB
+Sending build context to Docker daemon 119.8 MB
+Sending build context to Docker daemon 120.3 MB
+Sending build context to Docker daemon 120.9 MB
+Sending build context to Docker daemon 121.4 MB
+Sending build context to Docker daemon   122 MB
+Sending build context to Docker daemon 122.6 MB
+Sending build context to Docker daemon 123.1 MB
+Sending build context to Docker daemon 123.7 MB
+Sending build context to Docker daemon 124.2 MB
+Sending build context to Docker daemon 124.8 MB
+Sending build context to Docker daemon 125.3 MB
+Sending build context to Docker daemon 125.9 MB
+Sending build context to Docker daemon 126.5 MB
+Sending build context to Docker daemon   127 MB
+Sending build context to Docker daemon 127.6 MB
+Sending build context to Docker daemon 128.1 MB
+Sending build context to Docker daemon 128.7 MB
+Sending build context to Docker daemon 129.2 MB
+Sending build context to Docker daemon 129.8 MB
+Sending build context to Docker daemon 130.4 MB
+Sending build context to Docker daemon 130.9 MB
+Sending build context to Docker daemon 131.5 MB
+Sending build context to Docker daemon   132 MB
+Sending build context to Docker daemon 132.6 MB
+Sending build context to Docker daemon 133.1 MB
+Sending build context to Docker daemon 133.7 MB
+Sending build context to Docker daemon 134.3 MB
+Sending build context to Docker daemon 134.8 MB
+Sending build context to Docker daemon 135.4 MB
+Sending build context to Docker daemon 135.9 MB
+Sending build context to Docker daemon 136.5 MB
+Sending build context to Docker daemon   137 MB
+Sending build context to Docker daemon 137.6 MB
+Sending build context to Docker daemon 138.1 MB
+Sending build context to Docker daemon 138.7 MB
+Sending build context to Docker daemon 139.3 MB
+Sending build context to Docker daemon 139.8 MB
+Sending build context to Docker daemon 140.4 MB
+Sending build context to Docker daemon 140.9 MB
+Sending build context to Docker daemon 141.5 MB
+Sending build context to Docker daemon   142 MB
+Sending build context to Docker daemon 142.6 MB
+Sending build context to Docker daemon 143.2 MB
+Sending build context to Docker daemon 143.7 MB
+Sending build context to Docker daemon 144.3 MB
+Sending build context to Docker daemon 144.8 MB
+Sending build context to Docker daemon 145.4 MB
+Sending build context to Docker daemon 145.9 MB
+Sending build context to Docker daemon 146.4 MB
+
+Step 1 : FROM reg-mirror.shie.site/shie-base/centos6-tomcat:7
+ ---> 6f50a1925048
+Step 2 : MAINTAINER chenjiangtao@shie.com.cn
+ ---> Using cache
+ ---> c0a629f4831c
+Step 3 : ENV PROJ_NAME iprs
+ ---> Using cache
+ ---> 75e55f8d8956
+Step 4 : RUN mkdir -p /app/shie/${PROJ_NAME}/conf
+ ---> Using cache
+ ---> 2e6874500c98
+Step 5 : ADD conf /app/shie/${PROJ_NAME}/conf
+ ---> Using cache
+ ---> 1e3f74b2d62e
+Step 6 : ENV CLASSPATH /app/shie/${PROJ_NAME}/config/${ENV_NAME}:/usr/local/jdk/lib/dt.jar:/usr/local/jdk/lib/tools.jar
+ ---> Using cache
+ ---> e5f2e3690dda
+Step 7 : COPY target/${PROJ_NAME}*.war /app/shie/${PROJ_NAME}/
+
+ ---> b64bfbec795b
+
+Removing intermediate container 3b787afcac4b
+Step 8 : RUN unzip -d ${CATALINA_HOME}/webapps/${PROJ_NAME} /app/shie/${PROJ_NAME}/${PROJ_NAME}*.war
+
+ ---> Running in ec7d24374a74
+Archive:  /app/shie/iprs/iprs.war
+   creating: /usr/local/tomcat/webapps/iprs/META-INF/
+  inflating: /usr/local/tomcat/webapps/iprs/META-INF/MANIFEST.MF  
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/
+
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/errormessage/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/request/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/response/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/exception/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/constants/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/aop/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/controller/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/monitor/
+   creating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/web.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/dubbo.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/jdbc.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/log4j.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/redis.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/blockchain.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/banktest.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/comm/config/config.properties  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/dubbo-consumer.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/dubbo-provider.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/log4j.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsApiServiceLogMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsBankCodeMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsBeneficiaryInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsBenefitInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsInsuredInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsInsurerCodeMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsOperationLogMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsPermissionInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsPolicyInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsRegisterPolicyMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsCancelPolicyMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsImageInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/mapping/TIprsRegisterInfoMapper.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/spring-mvc.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/spring-mybatis.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/spring-redis.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/spring-dubbo.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/spring.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/response/RegisterQueryResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/response/RegisterQueryResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/request/RegisterQueryRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/registerquery/request/RegisterQueryRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/CommonBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/RegisterInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/CommonBusiness.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/PolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/request/FreezeQueryRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/request/FreezeQueryRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/response/FreezeQueryResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/freezequery/response/FreezeQueryResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/request/PolicyFreezeRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/request/PolicyFreezeRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/response/PolicyFreezeResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyfreeze/response/PolicyFreezeResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/RequestBase.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/ResponseBase.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/RequestHead.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/ResponseHead.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/LoanInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/request/PayInformRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/request/PayInformRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/response/PayInformResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/payinform/response/PayInformResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/request/LoanInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/request/EntrustCancelRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/request/EntrustCancelRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/response/PolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/response/LoanInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/response/EntrustCancelResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/entrustcancel/response/EntrustCancelResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/errormessage/ErrorResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/errormessage/ErrorMessage.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/errormessage/ErrorResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/response/ApplyCompensateResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/response/ApplyCompensateResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/request/ApplyCompensateRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/request/PolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/applycompensate/request/ApplyCompensateRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/request/PolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/request/PolicyQueryRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/request/PolicyQueryRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/PolicyQueryResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/PolicyQueryResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/PolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/PolicyHolder.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/BenefitInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/BeneficiaryInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyquery/response/InsurantInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/response/UploadImageResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/response/PolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/response/UploadImageResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/request/UploadImageRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/request/UploadImageRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/uploadimage/request/ImageInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/response/PolicyUnfreezeResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/response/PolicyUnfreezeResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/request/PolicyUnfreezeRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/policyunfreeze/request/PolicyUnfreezeRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/request/MortgageApplyRequestBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/request/MortgageApplyRequest.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/response/MortgageApplyResponse.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/message/mortgageapply/response/MortgageApplyResponseBody.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsuredInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsApiServiceLogExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsApiServiceLogExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsApiServiceLogExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsApiServiceLogExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsApiServiceLogWithBLOBs.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsApiServiceLog.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterPolicy.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterPolicyExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterPolicyExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterPolicyExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsRegisterPolicyExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsAccountServiceInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBankCode.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPolicyInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsOperationLog.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBeneficiaryInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBeneficiaryInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBeneficiaryInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBeneficiaryInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBeneficiaryInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPermissionInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPolicyInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPolicyInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPolicyInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPolicyInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsCancelPolicy.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBenefitInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBenefitInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBenefitInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBenefitInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBenefitInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsurerCodeExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsurerCodeExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsurerCodeExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsurerCodeExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsurerCode.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBankCodeExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBankCodeExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBankCodeExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsBankCodeExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsOperationLogExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsOperationLogExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsOperationLogExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsOperationLogExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsuredInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsuredInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsuredInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsInsuredInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPermissionInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPermissionInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPermissionInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsPermissionInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsImageInfoExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsImageInfoExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsImageInfoExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsImageInfoExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsImageInfo.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsCancelPolicyExample$GeneratedCriteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsCancelPolicyExample$Criteria.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsCancelPolicyExample$Criterion.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/TIprsCancelPolicyExample.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/ModelWrapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/model/exception/BaseException.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsApiServiceLogMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsRegisterInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsRegisterPolicyMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsBeneficiaryInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsPolicyInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsBenefitInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsInsurerCodeMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsAccountServiceInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsBankCodeMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsOperationLogMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsInsuredInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsImageInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsCancelPolicyMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/dao/TIprsPermissionInfoMapper.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/FreezeQuery.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/PolicyUnfreeze.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/BaseServiceImpl.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/RegisterQuery.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/PolicyFreeze.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/UploadImage.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/PolicyQuery.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/ApplyCompensate.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/EntrustCancelPolicy.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/PayInform.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/impl/MortgageApply.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/BusinessService.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/service/BaseService.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/constants/ResponseCodeEnum.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/constants/RegisterStatus.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/constants/BaseConstants.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/constants/ServiceEnum.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/constants/UnregisterType.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/CustomDateSerializer.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/OssUploadFileUtil.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/JsonXmlConverter.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/PostRequestUtil$TrustAnyTrustManager.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/PostRequestUtil$TrustAnyHostnameVerifier.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/PostRequestUtil$1.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/PostRequestUtil.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/StringUtil.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/common/utils/SeqUtil.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/aop/ArchivesLogAspect$1.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/aop/ArchivesLogAspect.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/aop/ArchivesLog.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/iprs/controller/IprsController.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/classes/com/shie/monitor/Monitor.class  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-core-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-web-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-beans-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-context-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-oxm-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-tx-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-jdbc-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-webmvc-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-expression-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-aop-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/aopalliance-1.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-context-support-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-test-4.2.2.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/servlet-api-2.5.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jsp-api-2.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-data-commons-1.12.5.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-data-redis-1.7.4.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/spring-data-keyvalue-1.1.4.RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jedis-2.6.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-pool2-2.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/mybatis-3.3.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/mybatis-spring-1.2.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/druid-1.0.27.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/mysql-connector-java-5.1.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jcl-over-slf4j-1.5.8.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/slf4j-api-1.5.8.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/slf4j-log4j12-1.5.8.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/log4j-1.2.14.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-dataformat-xml-2.6.3.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-core-2.6.3.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-annotations-2.6.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-databind-2.6.3.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-module-jaxb-annotations-2.6.3.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/stax2-api-3.1.4.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/woodstox-core-asl-4.4.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/stax-api-1.0-2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/javassist-3.12.1.GA.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/dubbo-2.8.4.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/netty-3.2.10.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/zkclient-0.9.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/zookeeper-3.4.8.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jline-0.9.94.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/netty-3.7.0.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/httpclient-4.5.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/httpcore-4.4.4.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-logging-1.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/fastjson-1.2.7.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/aspectjweaver-1.8.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/comm-framework-1.1.0-RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/dozer-5.5.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-beanutils-1.9.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-collections-3.2.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-lang3-3.2.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/dozer-spring-5.5.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/pagehelper-4.1.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jsqlparser-0.9.5.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/rocketmq-client-3.2.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/rocketmq-common-3.2.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/rocketmq-remoting-3.2.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/netty-all-4.0.25.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/ons-client-1.2.5.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/elastic-job-core-1.1.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/lombok-1.16.4.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/guava-18.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-exec-1.3.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/quartz-2.2.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/c3p0-0.9.1.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/curator-framework-2.10.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/curator-client-2.10.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/curator-recipes-2.10.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/curator-test-2.10.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/javassist-3.18.1-GA.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-math-2.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/gson-2.6.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/elastic-job-spring-1.1.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/elastic-job-api-core-1.1.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/comm-fileserver-1.1.0-RELEASE.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jstl-1.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/standard-1.1.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/ojdbc14-6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jul-to-slf4j-1.7.7.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-fileupload-1.2.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-io-2.4.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-net-3.3.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-lang-2.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-pool-1.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/httpmime-4.5.2.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jsch-0.1.54.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/joda-time-2.9.4.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/aliyun-sdk-oss-2.2.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jdom-1.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/json-lib-2.4-jdk15.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/ezmorph-1.0.6.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/javax.ws.rs-api-2.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jetty-6.1.26.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jetty-util-6.1.26.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/servlet-api-2.5-20081211.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/resteasy-client-3.0.7.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/resteasy-jaxrs-3.0.7.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jaxrs-api-3.0.7.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jboss-annotations-api_1.1_spec-1.0.1.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/activation-1.1.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jcip-annotations-1.0.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/resteasy-jackson-provider-3.0.7.Final.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-core-asl-1.9.12.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-xc-1.9.12.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-mapper-asl-1.9.12.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/jackson-jaxrs-1.9.12.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/validation-api-1.0.0.GA.jar  
+  inflating: /usr/local/tomcat/webapps/iprs/WEB-INF/lib/commons-codec-1.9.jar  
+   creating: /usr/local/tomcat/webapps/iprs/META-INF/maven/
+   creating: /usr/local/tomcat/webapps/iprs/META-INF/maven/iprs/
+   creating: /usr/local/tomcat/webapps/iprs/META-INF/maven/iprs/iprs/
+  inflating: /usr/local/tomcat/webapps/iprs/META-INF/maven/iprs/iprs/pom.xml  
+  inflating: /usr/local/tomcat/webapps/iprs/META-INF/maven/iprs/iprs/pom.properties  
+
+ ---> 7768531eceed
+Removing intermediate container ec7d24374a74
+Step 9 : RUN sed -i '2i rm ${CATALINA_HOME}/webapps/${PROJ_NAME}/WEB-INF/classes/conf/' /usr/local/tomcat/bin/catalina.sh
+
+ ---> Running in 30a7f3c77a73
+
+ ---> d80d539404ad
+Removing intermediate container 30a7f3c77a73
+Step 10 : RUN sed -i '3i rm -rf ${CATALINA_HOME}/webapps/${PROJ_NAME}/WEB-INF/classes/comm/config/' /usr/local/tomcat/bin/catalina.sh
+
+ ---> Running in 91632db13933
+
+ ---> fffa9e382182
+Removing intermediate container 91632db13933
+Step 11 : RUN sed -i '4i mkdir ${CATALINA_HOME}/webapps/${PROJ_NAME}/WEB-INF/classes/conf/' /usr/local/tomcat/bin/catalina.sh
+
+ ---> Running in 6004918232e0
+
+ ---> 13fada6efbd1
+Removing intermediate container 6004918232e0
+Step 12 : RUN sed -i '5i mkdir ${CATALINA_HOME}/webapps/${PROJ_NAME}/WEB-INF/classes/comm/config/' /usr/local/tomcat/bin/catalina.sh
+
+ ---> Running in b654c29a5c41
+
+ ---> c5d2d9ea89c7
+Removing intermediate container b654c29a5c41
+Step 13 : RUN sed -i '6i cp /app/shie/${PROJ_NAME}/conf/${ENV_NAME}/* ${CATALINA_HOME}/webapps/${PROJ_NAME}/WEB-INF/classes/conf' /usr/local/tomcat/bin/catalina.sh
+
+ ---> Running in 997d0538a457
+
+ ---> 892c59d03d36
+Removing intermediate container 997d0538a457
+Step 14 : RUN sed -i '7i cp /app/shie/${PROJ_NAME}/conf/${ENV_NAME}/redis.properties ${CATALINA_HOME}/webapps/${PROJ_NAME}/WEB-INF/classes/comm/config' /usr/local/tomcat/bin/catalina.sh
+
+ ---> Running in 3454686ba6dc
+
+ ---> 8c176c6fdfd2
+Removing intermediate container 3454686ba6dc
+Successfully built 8c176c6fdfd2
++ docker tag reg.shie.com.cn/comm/iprs reg.shie.com.cn/comm/iprs:1.0.1
++ docker push reg.shie.com.cn/comm/iprs:1.0.1
+The push refers to a repository [reg.shie.com.cn/comm/iprs]
+92f0a3fff6b9: Preparing
+afe7a21424ef: Preparing
+4c119946174d: Preparing
+84c0df76c68f: Preparing
+42a81ac65311: Preparing
+865744d22df2: Preparing
+4446cd209a29: Preparing
+6403e5833894: Preparing
+77a990cfb734: Preparing
+4a881b9c5fa8: Preparing
+90162e752e61: Preparing
+98131ec9adc2: Preparing
+d97888f599cb: Preparing
+cdd2fa18f3b1: Preparing
+11750340c378: Preparing
+21413b50ec5a: Preparing
+460bc43c3938: Preparing
+85c69c607a92: Preparing
+97d7965c6b86: Preparing
+323c2e12371f: Preparing
+94948f491d83: Preparing
+748549973ff9: Preparing
+f41a8417d8e1: Preparing
+bee33b6a45e4: Preparing
+4ed303e14b28: Preparing
+cf83e513bd8b: Preparing
+89fac9639790: Preparing
+2ff1b12bacfe: Preparing
+ed1258b19b47: Preparing
+e6f18efb2bbc: Preparing
+4446cd209a29: Waiting
+6403e5833894: Waiting
+77a990cfb734: Waiting
+4a881b9c5fa8: Waiting
+90162e752e61: Waiting
+98131ec9adc2: Waiting
+d97888f599cb: Waiting
+cdd2fa18f3b1: Waiting
+11750340c378: Waiting
+21413b50ec5a: Waiting
+460bc43c3938: Waiting
+85c69c607a92: Waiting
+97d7965c6b86: Waiting
+323c2e12371f: Waiting
+94948f491d83: Waiting
+748549973ff9: Waiting
+f41a8417d8e1: Waiting
+bee33b6a45e4: Waiting
+4ed303e14b28: Waiting
+cf83e513bd8b: Waiting
+89fac9639790: Waiting
+2ff1b12bacfe: Waiting
+ed1258b19b47: Waiting
+865744d22df2: Waiting
+e6f18efb2bbc: Waiting
+
+92f0a3fff6b9: Pushed
+
+84c0df76c68f: Pushed
+4c119946174d: Pushed
+42a81ac65311: Pushed
+77a990cfb734: Layer already exists
+4a881b9c5fa8: Layer already exists
+90162e752e61: Layer already exists
+98131ec9adc2: Layer already exists
+d97888f599cb: Layer already exists
+cdd2fa18f3b1: Layer already exists
+11750340c378: Layer already exists
+21413b50ec5a: Layer already exists
+afe7a21424ef: Pushed
+460bc43c3938: Layer already exists
+85c69c607a92: Layer already exists
+323c2e12371f: Layer already exists
+97d7965c6b86: Layer already exists
+748549973ff9: Layer already exists
+94948f491d83: Layer already exists
+bee33b6a45e4: Layer already exists
+f41a8417d8e1: Layer already exists
+cf83e513bd8b: Layer already exists
+4ed303e14b28: Layer already exists
+89fac9639790: Layer already exists
+2ff1b12bacfe: Layer already exists
+ed1258b19b47: Layer already exists
+e6f18efb2bbc: Layer already exists
+
+865744d22df2: Pushed
+
+6403e5833894: Pushed
+
+4446cd209a29: Pushed
+
+1.0.1: digest: sha256:d0f7f978bb5f381e4ba49c535f12fefcc8277559dd7ccdf7175d53822746e2dc size: 6601
++ docker push reg.shie.com.cn/comm/iprs
+The push refers to a repository [reg.shie.com.cn/comm/iprs]
+92f0a3fff6b9: Preparing
+afe7a21424ef: Preparing
+4c119946174d: Preparing
+84c0df76c68f: Preparing
+42a81ac65311: Preparing
+865744d22df2: Preparing
+4446cd209a29: Preparing
+6403e5833894: Preparing
+77a990cfb734: Preparing
+4a881b9c5fa8: Preparing
+90162e752e61: Preparing
+98131ec9adc2: Preparing
+d97888f599cb: Preparing
+cdd2fa18f3b1: Preparing
+11750340c378: Preparing
+21413b50ec5a: Preparing
+460bc43c3938: Preparing
+85c69c607a92: Preparing
+97d7965c6b86: Preparing
+323c2e12371f: Preparing
+94948f491d83: Preparing
+748549973ff9: Preparing
+f41a8417d8e1: Preparing
+bee33b6a45e4: Preparing
+4ed303e14b28: Preparing
+cf83e513bd8b: Preparing
+89fac9639790: Preparing
+2ff1b12bacfe: Preparing
+ed1258b19b47: Preparing
+e6f18efb2bbc: Preparing
+4a881b9c5fa8: Waiting
+90162e752e61: Waiting
+98131ec9adc2: Waiting
+d97888f599cb: Waiting
+cdd2fa18f3b1: Waiting
+11750340c378: Waiting
+21413b50ec5a: Waiting
+460bc43c3938: Waiting
+865744d22df2: Waiting
+4446cd209a29: Waiting
+85c69c607a92: Waiting
+6403e5833894: Waiting
+77a990cfb734: Waiting
+97d7965c6b86: Waiting
+89fac9639790: Waiting
+94948f491d83: Waiting
+748549973ff9: Waiting
+2ff1b12bacfe: Waiting
+f41a8417d8e1: Waiting
+ed1258b19b47: Waiting
+e6f18efb2bbc: Waiting
+bee33b6a45e4: Waiting
+cf83e513bd8b: Waiting
+4ed303e14b28: Waiting
+42a81ac65311: Layer already exists
+92f0a3fff6b9: Layer already exists
+84c0df76c68f: Layer already exists
+4c119946174d: Layer already exists
+afe7a21424ef: Layer already exists
+77a990cfb734: Layer already exists
+6403e5833894: Layer already exists
+4446cd209a29: Layer already exists
+865744d22df2: Layer already exists
+90162e752e61: Layer already exists
+4a881b9c5fa8: Layer already exists
+98131ec9adc2: Layer already exists
+d97888f599cb: Layer already exists
+11750340c378: Layer already exists
+cdd2fa18f3b1: Layer already exists
+460bc43c3938: Layer already exists
+21413b50ec5a: Layer already exists
+85c69c607a92: Layer already exists
+323c2e12371f: Layer already exists
+97d7965c6b86: Layer already exists
+94948f491d83: Layer already exists
+748549973ff9: Layer already exists
+f41a8417d8e1: Layer already exists
+bee33b6a45e4: Layer already exists
+89fac9639790: Layer already exists
+2ff1b12bacfe: Layer already exists
+4ed303e14b28: Layer already exists
+ed1258b19b47: Layer already exists
+cf83e513bd8b: Layer already exists
+e6f18efb2bbc: Layer already exists
+1.0.1: digest: sha256:d0f7f978bb5f381e4ba49c535f12fefcc8277559dd7ccdf7175d53822746e2dc size: 6601
+92f0a3fff6b9: Preparing
+afe7a21424ef: Preparing
+4c119946174d: Preparing
+84c0df76c68f: Preparing
+42a81ac65311: Preparing
+865744d22df2: Preparing
+4446cd209a29: Preparing
+6403e5833894: Preparing
+77a990cfb734: Preparing
+4a881b9c5fa8: Preparing
+90162e752e61: Preparing
+98131ec9adc2: Preparing
+d97888f599cb: Preparing
+cdd2fa18f3b1: Preparing
+11750340c378: Preparing
+21413b50ec5a: Preparing
+460bc43c3938: Preparing
+85c69c607a92: Preparing
+97d7965c6b86: Preparing
+323c2e12371f: Preparing
+94948f491d83: Preparing
+748549973ff9: Preparing
+f41a8417d8e1: Preparing
+bee33b6a45e4: Preparing
+4ed303e14b28: Preparing
+cf83e513bd8b: Preparing
+89fac9639790: Preparing
+2ff1b12bacfe: Preparing
+ed1258b19b47: Preparing
+e6f18efb2bbc: Preparing
+92f0a3fff6b9: Layer already exists
+afe7a21424ef: Layer already exists
+4c119946174d: Layer already exists
+84c0df76c68f: Layer already exists
+42a81ac65311: Layer already exists
+97d7965c6b86: Waiting
+323c2e12371f: Waiting
+94948f491d83: Waiting
+865744d22df2: Waiting
+98131ec9adc2: Waiting
+748549973ff9: Waiting
+f41a8417d8e1: Waiting
+d97888f599cb: Waiting
+bee33b6a45e4: Waiting
+cdd2fa18f3b1: Waiting
+11750340c378: Waiting
+4ed303e14b28: Waiting
+21413b50ec5a: Waiting
+cf83e513bd8b: Waiting
+4446cd209a29: Waiting
+89fac9639790: Waiting
+6403e5833894: Waiting
+2ff1b12bacfe: Waiting
+ed1258b19b47: Waiting
+90162e752e61: Waiting
+77a990cfb734: Waiting
+e6f18efb2bbc: Waiting
+460bc43c3938: Waiting
+85c69c607a92: Waiting
+865744d22df2: Layer already exists
+4446cd209a29: Layer already exists
+77a990cfb734: Layer already exists
+90162e752e61: Layer already exists
+21413b50ec5a: Layer already exists
+6403e5833894: Layer already exists
+4a881b9c5fa8: Layer already exists
+98131ec9adc2: Layer already exists
+94948f491d83: Layer already exists
+f41a8417d8e1: Layer already exists
+d97888f599cb: Layer already exists
+4ed303e14b28: Layer already exists
+97d7965c6b86: Layer already exists
+89fac9639790: Layer already exists
+85c69c607a92: Layer already exists
+e6f18efb2bbc: Layer already exists
+2ff1b12bacfe: Layer already exists
+ed1258b19b47: Layer already exists
+11750340c378: Layer already exists
+cdd2fa18f3b1: Layer already exists
+748549973ff9: Layer already exists
+bee33b6a45e4: Layer already exists
+323c2e12371f: Layer already exists
+460bc43c3938: Layer already exists
+cf83e513bd8b: Layer already exists
+latest: digest: sha256:d0f7f978bb5f381e4ba49c535f12fefcc8277559dd7ccdf7175d53822746e2dc size: 6601
++ rm -f /home/maven/.jenkins/workspace/UAT2/iprs-uat/target/iprs.war
+[iprs-uat] $ /bin/sh -xe /home/maven/apache-tomcat-8.0.28/temp/hudson9006445487316459510.sh
++ docker pull reg-mirror.shie.site/shie-base/centos6-tomcat:7
+7: Pulling from shie-base/centos6-tomcat
+Digest: sha256:482974acea5c6d9000484e74eec696c610ddc56df1941c6b32985079eabd5cdd
+Status: Image is up to date for reg-mirror.shie.site/shie-base/centos6-tomcat:7
++ export DOCKER_REG=reg.shie.com.cn/comm
++ DOCKER_REG=reg.shie.com.cn/comm
++ '[' -z ']'
++ export imagename=iprs
++ imagename=iprs
+++ echo iprs
+++ sed s#_#-#g
++ HOST_NAME=iprs
++ ssh docker@172.20.14.19 'docker pull reg.shie.com.cn/comm/iprs:1.0.1'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
+
+1.0.1: Pulling from comm/iprs
+e4f33982c81a: Already exists
+55fd2cec1bdd: Already exists
+a8ff404d899e: Already exists
+7efc73964d75: Already exists
+b3337f9959d9: Already exists
+e9e5f9d6ee61: Already exists
+6ff1d0a07d48: Already exists
+59a56107110b: Already exists
+a8f3658aca1c: Already exists
+6071a9671ef7: Already exists
+834a4942dce7: Already exists
+55db809a4f44: Already exists
+3aa4d99856d4: Already exists
+104b33ca8e05: Already exists
+5e4ee56b080c: Already exists
+58d8df3aa2fd: Already exists
+ddd6b8be77af: Already exists
+03f7fb84f7c9: Already exists
+f9f270715a37: Already exists
+5537898f7cf4: Already exists
+5d988e95fc99: Already exists
+ae860378ddea: Already exists
+dface32a3dbb: Pulling fs layer
+914377dcfaec: Pulling fs layer
+f57a18bcd06f: Pulling fs layer
+2c4271d0ae13: Pulling fs layer
+52033d3e783c: Pulling fs layer
+136029d3259a: Pulling fs layer
+290e2924c0b6: Pulling fs layer
+8376990e26b7: Pulling fs layer
+290e2924c0b6: Waiting
+8376990e26b7: Waiting
+2c4271d0ae13: Waiting
+52033d3e783c: Waiting
+136029d3259a: Waiting
+f57a18bcd06f: Download complete
+2c4271d0ae13: Verifying Checksum
+2c4271d0ae13: Download complete
+52033d3e783c: Verifying Checksum
+52033d3e783c: Download complete
+136029d3259a: Verifying Checksum
+136029d3259a: Download complete
+290e2924c0b6: Verifying Checksum
+290e2924c0b6: Download complete
+8376990e26b7: Download complete
+914377dcfaec: Verifying Checksum
+914377dcfaec: Download complete
+dface32a3dbb: Verifying Checksum
+dface32a3dbb: Download complete
+
+dface32a3dbb: Pull complete
+
+914377dcfaec: Pull complete
+
+f57a18bcd06f: Pull complete
+
+2c4271d0ae13: Pull complete
+52033d3e783c: Pull complete
+
+136029d3259a: Pull complete
+290e2924c0b6: Pull complete
+
+8376990e26b7: Pull complete
+Digest: sha256:d0f7f978bb5f381e4ba49c535f12fefcc8277559dd7ccdf7175d53822746e2dc
+Status: Downloaded newer image for reg.shie.com.cn/comm/iprs:1.0.1
++ ssh docker@172.20.14.19 '[ -d ~/iprs ] || mkdir ~/iprs '
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
+++ date +%F_%T
++ ssh docker@172.20.14.19 '[ ! -f ~/iprs/docker-compose.yml ] || cp ~/iprs/docker-compose.yml ~/iprs/docker-compose.yml.2017-10-20_16:19:58'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
++ scp conf/uat/docker-compose.yml 'docker@172.20.14.19:~/iprs/'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
+
++ ssh docker@172.20.14.19 '[ -f ~/iprs/docker-compose.yml ] && sed -i s#CONTAINER_NAME#iprs-uat#g ~/iprs/docker-compose.yml'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
++ ssh docker@172.20.14.19 '[ -f ~/iprs/docker-compose.yml ] && sed -i s#IMAGE_NAME#iprs#g ~/iprs/docker-compose.yml'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
++ ssh docker@172.20.14.19 '[ -f ~/iprs/docker-compose.yml ] && sed -i s#=ENV_IN_NAME#=uat#g ~/iprs/docker-compose.yml'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
++ ssh docker@172.20.14.19 '[ -f ~/iprs/docker-compose.yml ] && sed -i s#:VERSION#:1.0.1#g ~/iprs/docker-compose.yml'
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
++ ssh docker@172.20.14.19 'cd ~/iprs && docker-compose up -d '
+Warning: Permanently added '172.20.14.19' (ECDSA) to the list of known hosts.
+Recreating iprs_iprs_1
+
+Finished: SUCCESS
+
+帮助我们本地化当前页
+生成 页面: 2017-10-20 下午04时18分10秒REST APIJenkins ver. 2.7.4
