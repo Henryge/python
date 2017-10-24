@@ -8,9 +8,9 @@ sys.setdefaultencoding('utf-8')
 import json
 import urllib
 
-fo = open('D:\\Person.txt', 'w')
+fo = open('/home/henryge/apps/data2', 'w')
 
-data = urllib.urlopen("http://www.baidu.com/").read()
+data = urllib.urlopen("http://www.baidu.com").read()
 
 fo.write(data)
 
