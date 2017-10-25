@@ -38,7 +38,7 @@ class Battery(object):
 			range = 270
 		message = "This car can go approximately " + str(range)
 		message += " miles on a full range."
-		print message
+		print(message)
 
 class ElectricCar(Car):
 	def __init__(self, make, model, year):
