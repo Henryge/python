@@ -7,8 +7,8 @@ sys.setdefaultencoding('utf-8')
 
 import json
 
-file = open("/home/henryge/apps/aa.txt", "r")
-fo = open('/home/henryge/apps/data', 'w')
+file = open("D:/aa.txt", "r")
+fo = open('D:/data', 'w')
 
 dataList = []
 
