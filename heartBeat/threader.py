@@ -3,11 +3,10 @@ import os,time,random
 
 def task(n):
 	print("%s is running" % os.getpid())
-	time.sleep(random.randint(1,3))
 	return n**2
 
 if __name__ == "__main__":
-	executor = ProcessPoolExecutor(max_workers=3)
+	executor = ProcessPoolExecutor(max_workers=11)
 	futures = []
 	for i in range(11):
 		future = executor.submit(task, i)

@@ -16,7 +16,11 @@ class HBCache(object):
 		cacheFile = open("jobsCache.txt", "r")
 		jobs = cacheFile.readlines()
 		cacheFile.close()
-		return jobs
+		resultJobs = []
+		for job in jobs:
+			job = job.strip("\n")
+			resultJobs.append(job)
+		return resultJobs
 
 	def updateJobs(self, index, job):
 		cacheFile = open("jobsCache.txt", "r")

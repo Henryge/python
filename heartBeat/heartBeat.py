@@ -1,5 +1,6 @@
 import time,mysql.connector
 from apscheduler.schedulers.blocking import BlockingScheduler
+from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
 from db import HBDB
 from hbCache import HBCache
 from job import HBJob
@@ -15,17 +16,18 @@ def job():
 			jobStr = str(x[0]) + "|" + str(x[1]) + "|" + str(x[2]) + "|" + str(x[3]) + "|" + str(x[4]) + "|" + str(x[5]) + "|" + str(x[6]) + "|" + str(x[7])
 			if cacheJob[0] != jobStr:
 				print(str(x[0]) + "出现修改:" + jobStr)
+	#启动相应的线程组
+	exeJobs = hbCache.getJobs()
+	executor = ProcessPoolExecutor(max_workers=len(exeJobs))
+	futures = []
+	for exeJob in exeJobs:
+		future = executor.submit(ping, exeJob)
+		futures.append(future)
+	executor.shutdown(True)
 
-def pingJob():
-	hbCache = HBCache()
-	cacheJobs = hbCache.getJobs();
-	for jobStr in cacheJobs:
-		jobStr = jobStr.strip("\n")
-		jobArray = jobStr.split("|")
-		job = HBJob(jobArray[0],jobArray[1],jobArray[2],jobArray[3],jobArray[4],jobArray[5],jobArray[6],jobArray[7])
-		job.
-
-def ping():
+def ping(job):
+	print(job.beatSeconds)
+	time.sleep(job.beatSeconds)
 	code = os.system("ping -n 1 -w 1 www.baidu.com")
 	if code:
 		print("ping is fail")
